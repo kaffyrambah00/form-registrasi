@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-body-tertiary">
+  <main class="container py-5 form-wrapper">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-4">Form Registrasi</h1>
+
+        <form id="formDaftar" novalidate>
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama lengkap</label>
+            <input
+              id="nama"
+              name="nama"
+              type="text"
+              class="form-control"
+              placeholder="Contoh: Al kaffy"
+              minlength="3"
+              required
+              aria-describedby="nama-error"
+            >
+            <div id="nama-error" class="invalid-feedback"></div>
+          </div>
+
+          <div class="mb-3">
+            <label for="hp" class="form-label">Nomor WhatsApp</label>
+            <input
+              id="hp"
+              name="hp"
+              type="tel"
+              inputmode="numeric"
+              class="form-control"
+              placeholder="081234567890"
+              pattern="08[0-9]{8,11}"
+              required
+              aria-describedby="hp-hint hp-error"
+            >
+            <div id="hp-hint" class="form-text">
+              Diawali 08, total 10–13 digit
+            </div>
+            <div id="hp-error" class="invalid-feedback"></div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-control"
+              placeholder="Minimal 8 karakter"
+              minlength="8"
+              required
+              aria-describedby="password-hint password-error"
+            >
+            <div id="password-hint" class="form-text">
+              Password minimal 8 karakter
+            </div>
+            <div id="password-error" class="invalid-feedback"></div>
+          </div>
+
+          <div class="mb-3">
+            <label for="konfirmasi" class="form-label">
+              Konfirmasi password
+            </label>
+            <input
+              id="konfirmasi"
+              name="konfirmasi"
+              type="password"
+              class="form-control"
+              placeholder="Ketik ulang password"
+              required
+              aria-describedby="konfirmasi-error"
+            >
+            <div id="konfirmasi-error" class="invalid-feedback"></div>
+          </div>
+
+          <div class="mb-4">
+            <label for="tanggal" class="form-label">Tanggal lahir</label>
+            <input
+              id="tanggal"
+              name="tanggal"
+              type="date"
+              class="form-control"
+              required
+              aria-describedby="tanggal-hint tanggal-error"
+            >
+            <div id="tanggal-hint" class="form-text">
+              Usia pendaftar harus minimal 20 tahun
+            </div>
+            <div id="tanggal-error" class="invalid-feedback"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Daftar
+          </button>
+
+          <div id="statusForm" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
